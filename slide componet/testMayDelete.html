@@ -207,8 +207,13 @@ console.log(picArray);
 var str = "";
 var iBody = document.getElementById('myHack');
 
+if(picArray.length<1){
+  iBody.innerHTML = "<i id=\"noImage\">No Images. Please Uploaded Images</i>";
+  document.getElementById('noImage').style.color="red";
+}
+
 for (i = 0; i < picArray.length; i++) {
-  str =str + "<div class=\"mySlides\">    <div class=\"numbertext\">"+slideIndex +" / "+ picArray.length+"</div>    <img src=\""+ picArray[i] +"\" style=\"width:100%\">  </div>";
+  str =str + "<div class=\"mySlides\">    <div class=\"numbertext\">"+(i+1) +" / "+ picArray.length+"</div>    <img src=\""+ picArray[i] +"\" style=\"width:100%\">  </div>";
 
      iBody.innerHTML = str;
 }
